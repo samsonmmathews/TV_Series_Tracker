@@ -1,0 +1,24 @@
+extends ../layout 
+
+block layout-content 
+    h1 Add series details
+    form(method="post", action="/admin/series/add/submit")
+        div 
+            label(for="series_id") Series ID: 
+            input(type="number", id="series_id", name="series_id", placeholder="eg. 10")
+        div 
+            label(for="title") Series name: 
+            input(type="text", id="title", name="title")
+        div 
+            label(for="company_id") Company ID: 
+            input(type="number", id="company_id", name="company_id")
+        div 
+            label(for="year") Release year: 
+            input(type="number", id="year", name="release_year", placeholder="eg. 2025")
+        div 
+            label(for="total_episodes") Total episodes: 
+            input(type="number", id="total_episodes", name="total_episodes")
+        div 
+            label(for="rating") Series ID: 
+            input(type="number", id="rating", name="imdb_rating", placeholder="eg. 8.0")
+        button(type="submit") Add series

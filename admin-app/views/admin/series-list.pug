@@ -1,0 +1,21 @@
+extends ../layout 
+
+block layout-content 
+    h1 Administer series details
+    a(href="/admin/series/add") + Add new series
+    table 
+        thead 
+            tr 
+                th Series Name 
+                th IMDb Rating 
+        tbody 
+            each series in menu 
+                tr 
+                    td #{series.title}
+                    td #{series.imdb_rating}
+                    td 
+                        form(method="get", action="/admin/series/delete")
+                            input(type="hidden", name="seriesID", value=series._id)
+                            button(type="submit") Delete
+                    td 
+                        a(href=`/admin/series/edit?seriesID=${series._id}`) Edit

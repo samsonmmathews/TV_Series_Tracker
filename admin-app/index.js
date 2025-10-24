@@ -1,0 +1,26 @@
+// IMPORT REQUIRED MODULES
+import express from "express"; // const express = require("express")
+import path from "path"; // to make available methods for path concatenation, etc.
+
+import "dotenv/config"; // load the environment variables and make them available to the entire app
+
+const __dirname = import.meta.dirname; // current app's root directory
+
+const app = express(); //create Express app
+const port = process.env.PORT || "8888";
+
+app.set("views", path.join(__dirname, "views"));
+
+app.set("view engine", "pug");
+
+// set up static path for static files
+app.use(express.static(path.join(__dirname, "public")));
+
+import pages from "./components/pages/pageRouter.js";
+import seriesAdminPages from "./components/series/router.js";
+app.use("/", pages);
+app.use("/admin/series", seriesAdminPages);
+
+app.listen(port, () => {
+    console.log(`Listening on http://localhost:${port}`);
+});
