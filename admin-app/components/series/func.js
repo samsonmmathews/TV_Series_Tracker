@@ -2,7 +2,7 @@ import { MongoClient, ObjectId } from "mongodb"; // Import the MongoClient class
 
 // CONNECT TO THE DB
 const dbUrl = process.env.MONGOURI;
-const db = new MongoClient(dbUrl).db("tvseries_db");
+const db = new MongoClient(dbUrl).db(process.env.DB_NAME);
 
 // DB FUNCTIONS
 // Function to get all the tv series in the collection
