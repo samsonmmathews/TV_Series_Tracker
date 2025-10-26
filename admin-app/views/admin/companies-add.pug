@@ -1,12 +1,13 @@
 extends ../layout 
 
 block layout-content 
-    h1 Add company details
-    form(method="post", action="/admin/companies/add/submit")
-        div 
-            label(for="company_id") Company ID: 
-            input(type="number", id="company_id", name="company_id", placeholder="eg. 10")
-        div 
-            label(for="name") Company name: 
-            input(type="text", id="name", name="name", placeholder="eg. Netflix")
-        button(type="submit") Add company
+    .container.my-5
+        h1.text-center.mb-4 Add company details
+        form(method="post", action="/admin/companies/add/submit")
+            .mb-3 
+                label.form-label(for="company_id") Company ID: 
+                input.form-control(type="number", id="company_id", name="company_id", placeholder="eg. 10")
+            .mb-3 
+                label.form-label(for="name") Company name: 
+                input.form-control(type="text", id="name", name="name", placeholder="eg. Netflix")
+            button.btn.btn-success(type="submit") Add company

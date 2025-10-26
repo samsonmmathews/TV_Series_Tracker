@@ -1,6 +1,12 @@
-nav(aria-label="Main navigation")
-    ul
-        li: a(href="/") Home
-        li: a(href="/about") About 
-        li: a(href="/admin/series") Series List
-        li: a(href="/admin/companies") Company List
+nav.navbar.navbar-expand-lg.bg-dark.navbar-dark(aria-label="Main navigation")
+    .container-fluid.justify-content-center
+        a.navbar-brand(href="/") Admin Navigation
+        ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+                a.nav-link.active.text-light(aria-current="page", href="/") Home
+            li.nav-item
+                a.nav-link.text-light(href="/about") About
+            li.nav-item
+                a.nav-link.text-light(href="/admin/series") Series List
+            li.nav-item
+                a.nav-link.text-light(href="/admin/companies") Company List

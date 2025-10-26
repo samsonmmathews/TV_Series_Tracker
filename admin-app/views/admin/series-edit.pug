@@ -1,25 +1,26 @@
 extends ../layout 
 
-block layout-content 
-    h1 Edit series details 
-    form(method="post", action="/admin/series/edit/submit")
-        input(type="hidden", name="seriesID", value=series._id)
-        div 
-            label(for="series_id") Series ID: 
-            input(type="number", id="series_id", name="series_id", value=series.series_id)
-        div 
-            label(for="title") Series name: 
-            input(type="text", id="title", name="title", value=series.title)
-        div 
-            label(for="company_id") Company ID: 
-            input(type="number", id="company_id", value=series.company_id)
-        div 
-            label(for="year") Release year: 
-            input(type="number", id="year", name="release_year", value=series.release_year)
-        div 
-            label(for="total_episodes") Total episodes: 
-            input(type="number", id="total_episodes", name="total_episodes", value=series.total_episodes)
-        div 
-            label(for="rating") IMDb Rating: 
-            input(type="decimal", id="rating", name="imdb_rating", value=series.imdb_rating)
-        button(type="submit") Update series
+block layout-content
+    .container.my-5 
+        h1.text-center.mb-4 Edit series details 
+        form(method="post", action="/admin/series/edit/submit")
+            input.form-control(type="hidden", name="seriesID", value=series._id)
+            .mb-3 
+                label.form-label(for="series_id") Series ID: 
+                input.form-control(type="number", id="series_id", name="series_id", value=series.series_id)
+            .mb-3 
+                label.form-label(for="title") Series name: 
+                input.form-control(type="text", id="title", name="title", value=series.title)
+            .mb-3 
+                label.form-label(for="company_id") Company ID: 
+                input.form-control(type="number", id="company_id", value=series.company_id)
+            .mb-3 
+                label.form-label(for="year") Release year: 
+                input.form-control(type="number", id="year", name="release_year", value=series.release_year)
+            .mb-3 
+                label.form-label(for="total_episodes") Total episodes: 
+                input.form-control(type="number", id="total_episodes", name="total_episodes", value=series.total_episodes)
+            .mb-3 
+                label.form-label(for="rating") IMDb Rating: 
+                input.form-control(type="decimal", id="rating", name="imdb_rating", value=series.imdb_rating)
+            button.btn.btn-success(type="submit") Update series

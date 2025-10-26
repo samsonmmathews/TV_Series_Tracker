@@ -13,7 +13,7 @@ router.use(express.json());
 // ADMIN PATHS
 router.get("/", async (request, response) => {
     let series = await model.getSeries();
-    response.render("admin/series-list", { title: "Administer series names", menu: series });
+    response.render("admin/series-list", { title: "Admin - TV Series names", menu: series });
 });
 router.get("/add", async (request, response) => {
     let series = await model.getSeries();
@@ -67,5 +67,10 @@ router.post("/edit/submit", async (request, response) => {
     await model.editSeries(filter, updatedSeries);
     response.redirect("/admin/series");
 });
+
+router.get("/api/allSeries", async(request, response) => {
+    const allSeries = await model.getSeries();
+    response.json(allSeries);
+})
 
 export default router;
