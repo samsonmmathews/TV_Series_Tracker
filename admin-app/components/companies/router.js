@@ -14,7 +14,7 @@ router.use(express.json());
 // ADMIN PATHS
 router.get("/", async (request, response) => {
     let companies = await model.getCompanies();
-    response.render("admin/companies-list", { title: "Administer company names", menu: companies });
+    response.render("admin/companies-list", { title: "Admin - company names", menu: companies });
 });
 router.get("/add", async (request, response) => {
     let company = await model.getCompanies();

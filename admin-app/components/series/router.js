@@ -13,7 +13,7 @@ router.use(express.json());
 // ADMIN PATHS
 router.get("/", async (request, response) => {
     let series = await model.getSeries();
-    response.render("admin/series-list", { title: "Administer series names", menu: series });
+    response.render("admin/series-list", { title: "Admin - TV Series names", menu: series });
 });
 router.get("/add", async (request, response) => {
     let series = await model.getSeries();

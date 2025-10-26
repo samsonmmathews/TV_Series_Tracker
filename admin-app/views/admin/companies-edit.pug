@@ -1,13 +1,14 @@
 extends ../layout 
 
 block layout-content 
-    h1 Edit companies details 
-    form(method="post", action="/admin/companies/edit/submit")
-        input(type="hidden", name="companyID", value=companies._id)
-        div 
-            label(for="company_id") Company ID: 
-            input(type="number", id="company_id", name="company_id", value=companies.company_id)
-        div 
-            label(for="name") Company name: 
-            input(type="text", id="name", name="name", value=companies.name)
-        button(type="submit") Update company
+    .container.my-5
+        h1.text-center.mb-4 Edit companies details 
+        form(method="post", action="/admin/companies/edit/submit")
+            input.form-control(type="hidden", name="companyID", value=companies._id)
+            .mb-3 
+                label.form-label(for="company_id") Company ID: 
+                input.form-control(type="number", id="company_id", name="company_id", value=companies.company_id)
+            .mb-3 
+                label.form-label(for="name") Company name: 
+                input.form-control(type="text", id="name", name="name", value=companies.name)
+            button.btn.btn-success(type="submit") Update company

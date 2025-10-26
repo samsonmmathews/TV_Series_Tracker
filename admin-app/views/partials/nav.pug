@@ -1,12 +1,12 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light(aria-label="Main navigation")
+nav.navbar.navbar-expand-lg.bg-dark.navbar-dark(aria-label="Main navigation")
     .container-fluid.justify-content-center
-        a.navbar-brand.me-5(href="/") Admin Navigation
-        ul.navbar-nav.d-flex.flex-row
-            li.nav-item.me-3
-                a.nav-link.active(aria-current="page", href="/") Home
-            li.nav-item.me-3
-                a.nav-link(href="/about") About
-            li.nav-item.me-3
-                a.nav-link(href="/admin/series") Series List
+        a.navbar-brand(href="/") Admin Navigation
+        ul.navbar-nav.ms-auto.mb-2.mb-lg-0
             li.nav-item
-                a.nav-link(href="/admin/companies") Company List
+                a.nav-link.active.text-light(aria-current="page", href="/") Home
+            li.nav-item
+                a.nav-link.text-light(href="/about") About
+            li.nav-item
+                a.nav-link.text-light(href="/admin/series") Series List
+            li.nav-item
+                a.nav-link.text-light(href="/admin/companies") Company List

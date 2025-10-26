@@ -1,21 +1,24 @@
 extends ../layout 
 
 block layout-content 
-    h1 Administer series details
-    a(href="/admin/series/add") + Add new series
-    table 
-        thead 
-            tr 
-                th Series Name 
-                th IMDb Rating 
-        tbody 
-            each series in menu 
-                tr 
-                    td #{series.title}
-                    td #{series.imdb_rating}
-                    td 
-                        form(method="get", action="/admin/series/delete")
-                            input(type="hidden", name="seriesID", value=series._id)
-                            button(type="submit") Delete
-                    td 
-                        a(href=`/admin/series/edit?seriesID=${series._id}`) Edit
+    .container.mt-5
+        h1.text-center.mb-4 TV Series details
+        .d-flex.justify-content-end.mb-3
+            a.btn.btn-primary(href="/admin/series/add") Add new series
+        table.table.table-striped.table-bordered.table-hover.align-middle
+            thead.table-dark 
+                tr.text-center 
+                    th Series Name 
+                    th IMDb Rating 
+                    th(colspan="2") Actions
+            tbody 
+                each series in menu 
+                    tr.text-center
+                        td #{series.title}
+                        td #{series.imdb_rating}
+                        td 
+                            form(method="get", action="/admin/series/delete", class="d-inline")
+                                input(type="hidden", name="seriesID", value=series._id)
+                                button.btn.btn-danger.btn-sm(type="submit") Delete
+                        td 
+                            button.btn.btn-warning.btn-sm(href=`/admin/series/edit?seriesID=${series._id}`) Edit

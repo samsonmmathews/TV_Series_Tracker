@@ -1,11 +1,7 @@
 extends layout 
 
-block append scripts
-    script(src="/js/home.js")
-
 block layout-content 
-    h1 Welcome to the Admin Page of the app! 
-    ul 
-        each series in menu 
-            li= series.title
-    p This was made using Express and Node.js
+    .container.text-center.my-5
+        h1 Welcome to the Admin Page of the app! 
+        p Click on the buttons in the navigation menu to continue
+        p This was made using Express and Node.js
