@@ -68,4 +68,9 @@ router.post("/edit/submit", async (request, response) => {
     response.redirect("/admin/series");
 });
 
+router.get("/api/allSeries", async(request, response) => {
+    const allSeries = await model.getSeries();
+    response.json(allSeries);
+})
+
 export default router;

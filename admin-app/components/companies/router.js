@@ -1,8 +1,9 @@
-import express from "express";
+import express, { response } from "express";
 import { ObjectId } from "mongodb";
 const router = express.Router(); // Create a router
 
 import model from "./func.js";
+import { request } from "http";
 
 // set up the express app to extend the URLencoded format and use JSON
 router.use(express.urlencoded({ extended: true }));
@@ -59,5 +60,10 @@ router.post("/edit/submit", async (request, response) => {
     await model.editCompany(filter, updatedCompany);
     response.redirect("/admin/companies");
 });
+
+router.get("/api/allCompanies", async(request, response) => {
+    const allCompanies = await model.getCompanies();
+    response.json(allCompanies);
+})
 
 export default router;

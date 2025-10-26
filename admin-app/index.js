@@ -1,6 +1,7 @@
 // IMPORT REQUIRED MODULES
 import express from "express"; // const express = require("express")
 import path from "path"; // to make available methods for path concatenation, etc.
+import cors from "cors";
 
 import "dotenv/config"; // load the environment variables and make them available to the entire app
 
@@ -8,6 +9,12 @@ const __dirname = import.meta.dirname; // current app's root directory
 
 const app = express(); //create Express app
 const port = process.env.PORT || "8888";
+
+//allow requests from all domains (need it to deploy API)
+//this should go after creating the app object
+app.use(cors({
+    origin: '*'
+}));
 
 app.set("views", path.join(__dirname, "views"));
 
