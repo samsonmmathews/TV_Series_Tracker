@@ -1,0 +1,21 @@
+extends ../layout 
+
+block layout-content 
+    h1 Administer companies details
+    a(href="/admin/companies/add") + Add new company
+    table 
+        thead 
+            tr 
+                th Company ID 
+                th Company Name 
+        tbody 
+            each companies in menu 
+                tr 
+                    td #{companies.company_id}
+                    td #{companies.name}
+                    td 
+                        form(method="get", action="/admin/companies/delete")
+                            input(type="hidden", name="companyID", value=companies._id)
+                            button(type="submit") Delete
+                    td 
+                        a(href=`/admin/companies/edit?companyID=${companies._id}`) Edit

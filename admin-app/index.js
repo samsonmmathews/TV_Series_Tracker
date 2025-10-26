@@ -18,8 +18,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 import pages from "./components/pages/pageRouter.js";
 import seriesAdminPages from "./components/series/router.js";
+import companiesAdminPages from "./components/companies/router.js";
 app.use("/", pages);
 app.use("/admin/series", seriesAdminPages);
+app.use("/admin/companies", companiesAdminPages);
 
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);

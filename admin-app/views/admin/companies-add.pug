@@ -1,0 +1,12 @@
+extends ../layout 
+
+block layout-content 
+    h1 Add company details
+    form(method="post", action="/admin/companies/add/submit")
+        div 
+            label(for="company_id") Company ID: 
+            input(type="number", id="company_id", name="company_id", placeholder="eg. 10")
+        div 
+            label(for="name") Company name: 
+            input(type="text", id="name", name="name", placeholder="eg. Netflix")
+        button(type="submit") Add company

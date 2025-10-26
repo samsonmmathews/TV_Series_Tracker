@@ -1,0 +1,13 @@
+extends ../layout 
+
+block layout-content 
+    h1 Edit companies details 
+    form(method="post", action="/admin/companies/edit/submit")
+        input(type="hidden", name="companyID", value=companies._id)
+        div 
+            label(for="company_id") Company ID: 
+            input(type="number", id="company_id", name="company_id", value=companies.company_id)
+        div 
+            label(for="name") Company name: 
+            input(type="text", id="name", name="name", value=companies.name)
+        button(type="submit") Update company
