@@ -1,0 +1,49 @@
+.series-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sort-btn {
+  padding: 8px 16px;
+  background: var(--tangerine);
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.sort-btn:hover {
+  transform: translateY(-2px);
+  background: rgb(255, 180, 80);
+}
+
+.series-page-title {
+  font-size: 2.1em;
+  font-weight: 700;
+  color: var(--sandstorm);
+  margin-bottom: 24px;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 14px;
+  }
+
+  .series-page {
+    padding: 15px;
+  }
+
+  .series-page-title {
+    font-size: 1.6em;
+  }
+}

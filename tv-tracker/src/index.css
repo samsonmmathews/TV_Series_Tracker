@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +20,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --maastricht-blue: #001A26;
+  --prussian-blue: #053752;
+  --tangerine: #EF810E;
+  --sandstorm: #E5DE44;
+  --text-light: #cfcfcf;
+  --text-dark: #111111;
 }
 
 a {
@@ -24,10 +40,17 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--maastricht-blue);
+  color: var(--text-light);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px;
 }
 
 h1 {

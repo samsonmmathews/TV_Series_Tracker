@@ -33,7 +33,7 @@ router.post("/add/submit", async (request, response) => {
     response.redirect("/admin/series");
 });
 
-router.get("/delete", async(request, response) => {
+router.get("/delete", async (request, response) => {
     let id = request.query.seriesID;
     // console.log(id);
     await model.deleteSeries(id);
@@ -42,22 +42,23 @@ router.get("/delete", async(request, response) => {
 
 router.get("/edit", async (request, response) => {
     let seriesId = request.query.seriesID;
-    if(!seriesId) {
+    if (!seriesId) {
         response.redirect("/admin/series");
     }
     let series = await model.getSeriesById(seriesId);
     let shows = await model.getSeries();
     response.render("admin/series-edit", { title: "Edit series details", menu: shows, series })
 });
+
 router.post("/edit/submit", async (request, response) => {
     let seriesId = request.body.seriesID;
-    if(!seriesId) {
+    if (!seriesId) {
         return response.redirect("/admin/series");
     }
     let updatedSeries = {
         series_id: Number(request.body.series_id),
         title: request.body.title,
-        company_id: request.body.company_id,    
+        company_id: request.body.company_id,
         release_year: request.body.release_year,
         total_episodes: request.body.total_episodes,
         imdb_rating: request.body.imdb_rating
@@ -68,9 +69,33 @@ router.post("/edit/submit", async (request, response) => {
     response.redirect("/admin/series");
 });
 
-router.get("/api/allSeries", async(request, response) => {
+router.get("/api/allSeries", async (request, response) => {
     const allSeries = await model.getSeries();
     response.json(allSeries);
 })
+
+router.post("/api/updateSeries", async (request, response) => {
+    const { seriesID, watched_episodes, next_episode_rating } = request.body;
+
+    if (!seriesID) {
+        return response.status(400).json({ error: "seriesID is required" });
+    }
+
+    const updatedSeries = {
+        watched_episodes: Number(watched_episodes),
+        next_episode_rating: Number(next_episode_rating)
+    };
+
+    const filter = { _id: new ObjectId(String(seriesID)) };
+
+    try {
+        await model.editSeries(filter, updatedSeries);
+        response.json({ success: true, message: "Series updated successfully" });
+    } catch (err) {
+        console.error(err);
+        response.status(500).json({ success: false, error: "Failed to update series" });
+    }
+});
+
 
 export default router;
