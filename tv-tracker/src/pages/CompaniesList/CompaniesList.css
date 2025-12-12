@@ -1,0 +1,18 @@
+.list-group {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.list-group-item {
+    padding: 14px 18px;
+    background: var(--prussian-blue);
+    margin-bottom: 12px;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1.05em;
+}
+
+.companyID {
+    opacity: 0.6;
+}
