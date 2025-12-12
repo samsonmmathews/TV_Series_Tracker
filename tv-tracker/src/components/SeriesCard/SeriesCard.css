@@ -1,134 +1,171 @@
 .series-card {
-  background: var(--prussian-blue);
-  padding: 20px;
-  border-radius: 14px;
-  color: var(--text-light);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  opacity: 0;
-  animation: fadeInUp 0.45s ease forwards;
+    background: var(--prussian-blue);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    opacity: 0;
+    animation: fadeInUp 0.45s ease forwards;
 }
 
 .series-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.35),
-              0 0 18px rgba(239,129,14,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(239, 129, 14, 0.28);
 }
 
 .series-card-header {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .series-title {
-  font-size: 1.45em;
-  font-weight: 700;
-  color: var(--sandstorm);
-  margin: 0;
+    font-size: 1.45em;
+    font-weight: 700;
+    color: var(--sandstorm);
+    margin: 0;
 }
 
 .series-meta {
-  font-size: 0.9em;
-  opacity: 0.8;
-  margin-top: 4px;
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 4px;
 }
 
 .series-divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin: 14px 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 14px 0;
 }
 
 .series-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .input-group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-label {
-  font-weight: 600;
-  margin-bottom: 6px;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .series-input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(0, 20, 30, 0.6);
-  color: var(--text-light);
-  font-size: 1em;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 20, 30, 0.6);
+    color: var(--text-light);
+    font-size: 1em;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .series-input:focus {
-  outline: none;
-  border-color: var(--tangerine);
-  box-shadow: 0 0 4px rgba(239,129,14,0.5);
+    outline: none;
+    border-color: var(--tangerine);
+    box-shadow: 0 0 4px rgba(239, 129, 14, 0.5);
 }
 
 .progress-container {
-  width: 100%;
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 6px;
-  overflow: hidden;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .progress-bar {
-  height: 8px;
-  background: var(--tangerine);
-  width: 0%;
-  transition: width 0.4s ease;
+    height: 8px;
+    background: var(--tangerine);
+    width: 0%;
+    transition: width 0.4s ease;
 }
 
 .series-score {
-  align-self: flex-start;
-  background: rgba(239,129,14,0.15);
-  color: var(--tangerine);
-  font-weight: 700;
-  font-size: 0.95em;
-  padding: 8px 14px;
-  border-radius: 50px;
-  margin-top: 10px;
-  border: 1px solid rgba(239,129,14,0.24);
+    align-self: flex-start;
+    background: rgba(239, 129, 14, 0.15);
+    color: var(--tangerine);
+    font-weight: 700;
+    font-size: 0.95em;
+    padding: 8px 14px;
+    border-radius: 50px;
+    margin-top: 10px;
+    border: 1px solid rgba(239, 129, 14, 0.24);
 }
 
 .score-good {
-  background: rgba(0, 200, 80, 0.18);
-  color: rgb(0, 255, 120);
-  border-color: rgba(0, 255, 120, 0.25);
+    background: rgba(0, 200, 80, 0.18);
+    color: rgb(0, 255, 120);
+    border-color: rgba(0, 255, 120, 0.25);
 }
 
 .score-mid {
-  background: rgba(255, 153, 0, 0.18);
-  color: rgb(255, 180, 80);
-  border-color: rgba(255, 180, 80, 0.25);
+    background: rgba(255, 153, 0, 0.18);
+    color: rgb(255, 180, 80);
+    border-color: rgba(255, 180, 80, 0.25);
 }
 
 .score-low {
-  background: rgba(255, 50, 50, 0.18);
-  color: rgb(255, 120, 120);
-  border-color: rgba(255, 120, 120, 0.25);
+    background: rgba(255, 50, 50, 0.18);
+    color: rgb(255, 120, 120);
+    border-color: rgba(255, 120, 120, 0.25);
 }
 
 .score-neutral {
-  background: rgba(239,129,14,0.15);
-  color: var(--tangerine);
-  border-color: rgba(239,129,14,0.24);
+    background: rgba(239, 129, 14, 0.15);
+    color: var(--tangerine);
+    border-color: rgba(239, 129, 14, 0.24);
+}
+
+.edit-btn {
+    background: var(--sandstorm);
+    border: none;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.edit-btn:hover {
+    background: #f0e75a;
+}
+
+.delete-btn-container {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-btn {
+    background: #ff4a4a;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background: #d63b3b;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

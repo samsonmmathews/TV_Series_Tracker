@@ -5,6 +5,8 @@ import SeriesList from "./components/SeriesList/SeriesList";
 import CompaniesList from "./pages/CompaniesList/CompaniesList";
 import About from "./pages/About";
 import Navbar from "./components/Navbar/Navbar";
+import AddSeriesPage from "./pages/AddSeriesPage/AddSeriesPage";
+import EditSeriesPage from "./pages/EditSeriesPage/EditSeriesPage";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/series" element={<SeriesList />} />
+        <Route path="/series/add" element={<AddSeriesPage />} />
+        <Route path="/series/edit/:seriesID" element={<EditSeriesPage />} />
         <Route path="/companies" element={<CompaniesList />} />
         <Route path="/about" element={<About />} />
       </Routes>

@@ -97,5 +97,42 @@ router.post("/api/updateSeries", async (request, response) => {
     }
 });
 
+router.post("/api/addSeries", async (req, res) => {
+    try {
+        let newSeries = {
+            series_id: req.body.series_id,
+            title: req.body.title,
+            company_id: req.body.company_id,
+            release_year: req.body.release_year,
+            total_episodes: req.body.total_episodes,
+            imdb_rating: req.body.imdb_rating,
+            watched_episodes: 0,
+            next_episode_rating: 0
+        };
+
+        await model.addSeries(newSeries);
+        res.json({ success: true, message: "Series added successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, error: "Failed to add series" });
+    }
+});
+
+router.post("/api/deleteSeries", async (req, res) => {
+    const { seriesID } = req.body;
+
+    if (!seriesID) {
+        return res.status(400).json({ error: "seriesID is required" });
+    }
+
+    try {
+        await model.deleteSeries(seriesID);
+        res.json({ success: true, message: "Series deleted successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, error: "Failed to delete series" });
+    }
+});
+
 
 export default router;
