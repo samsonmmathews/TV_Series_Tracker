@@ -10,7 +10,7 @@
     padding: 60px 20px;
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-    color: var(--sandstorm);
+    color: var(--tangerine);
     margin-bottom: 48px;
 }
 
@@ -38,7 +38,6 @@
     padding: 28px 20px;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-    color: var(--sandstorm);
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -51,10 +50,12 @@
 .about-card h3 {
     font-size: 1.5em;
     margin-bottom: 12px;
+    color: var(--tangerine);
 }
 
 .about-card p {
     font-size: 1em;
     opacity: 0.85;
     line-height: 1.5;
+    color: whitesmoke;
 }
