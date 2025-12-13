@@ -1,6 +1,7 @@
 .series-card {
-    background: var(--prussian-blue);
+    background: rgba(5, 55, 82, 0.5);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 20px;
     border-radius: 16px;
     color: var(--text-light);

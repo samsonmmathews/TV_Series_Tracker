@@ -5,7 +5,7 @@
 	font-family: 'Inter', sans-serif;
 }
 
-.hero-section {
+/* .hero-section {
 	text-align: center;
 	padding: 60px 20px;
 	background: var(--prussian-blue);
@@ -13,6 +13,19 @@
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 	color: var(--tangerine);
 	margin-bottom: 48px;
+} */
+
+.hero-section {
+	text-align: center;
+	padding: 60px 20px;
+	background: rgba(5, 55, 82, 0.5);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-radius: 16px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+	color: var(--tangerine);
+	margin-bottom: 48px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .hero-section h1 {
