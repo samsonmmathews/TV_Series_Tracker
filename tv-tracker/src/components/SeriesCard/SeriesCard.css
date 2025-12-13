@@ -22,14 +22,15 @@
 }
 
 .series-title {
-    font-size: 1.45em;
+    font-size: 1.4em;
     font-weight: 700;
     color: var(--sandstorm);
+    letter-spacing: 0.3px;
     margin: 0;
 }
 
 .series-meta {
-    font-size: 0.9em;
+    font-size: 0.85em;
     opacity: 0.8;
     margin-top: 4px;
 }
@@ -92,11 +93,53 @@
     background: rgba(239, 129, 14, 0.15);
     color: var(--tangerine);
     font-weight: 700;
-    font-size: 0.95em;
-    padding: 8px 14px;
+    font-size: 0.9em;
+    padding: 6px 14px;
     border-radius: 50px;
-    margin-top: 10px;
+    margin-top: 6px;
     border: 1px solid rgba(239, 129, 14, 0.24);
+}
+
+.series-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.edit-link {
+    background: rgba(239, 129, 14, 0.15);
+    color: var(--tangerine);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.edit-link:hover {
+    background: #001A26;
+    color: whitesmoke;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: rgba(255, 74, 74, 0.15);
+    color: rgb(255, 120, 120);
+    border: 1px solid rgba(255, 120, 120, 0.3);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.delete-btn:hover {
+    background: #001A26;
+    color: whitesmoke;
+    transform: translateY(-1px);
 }
 
 .score-good {
@@ -121,41 +164,6 @@
     background: rgba(239, 129, 14, 0.15);
     color: var(--tangerine);
     border-color: rgba(239, 129, 14, 0.24);
-}
-
-.edit-btn {
-    background: var(--sandstorm);
-    border: none;
-    color: #000;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 8px;
-    font-weight: 600;
-}
-
-.edit-btn:hover {
-    background: #f0e75a;
-}
-
-.delete-btn-container {
-    display: flex;
-    gap: 8px;
-}
-
-.delete-btn {
-    background: #ff4a4a;
-    border: none;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-top: 10px;
-}
-
-.delete-btn:hover {
-    background: #d63b3b;
 }
 
 @keyframes fadeInUp {

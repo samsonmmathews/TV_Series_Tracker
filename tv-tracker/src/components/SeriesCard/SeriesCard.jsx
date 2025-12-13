@@ -72,15 +72,16 @@ export default function SeriesCard({ series, onUpdate, onDelete }) {
                 <div className={`series-score ${scoreClass}`}>Score: {scoreValue}</div>
 
                 
-                <Link to={`/series/edit/${series._id}`}>
-                    <button className="edit-btn">Edit</button>
-                </Link>
+                <div className="series-card-actions">
+                    <Link to={`/series/edit/${series._id}`} className="edit-link">
+                        Edit
+                    </Link>
 
-                <div className="delete-btn-container">
                     <button className="delete-btn" onClick={confirmAndDelete} title={`Delete ${series.title}`} type="button">
                         Delete
                     </button>
                 </div>
+
             </div>
         </div>
     );
