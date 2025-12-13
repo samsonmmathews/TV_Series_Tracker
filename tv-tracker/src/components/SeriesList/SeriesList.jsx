@@ -78,12 +78,14 @@ export default function SeriesList() {
         <div className="page-container">
             <div className="series-header">
                 <h1 className="series-page-title">TV Series Tracker</h1>
-                <Link to="/series/add">
-                    <button className="add-series-btn">Add Series</button>
-                </Link>
-                <button className="sort-btn" onClick={handleSortHighToLow}>
-                    Sort by Score
-                </button>
+                <div className="series-buttons">
+                    <Link to="/series/add">
+                        <button className="add-series-btn">Add Series</button>
+                    </Link>
+                    <button className="sort-btn" onClick={handleSortHighToLow}>
+                        Sort by Score
+                    </button>
+                </div>
             </div>
 
             <div className="series-grid">

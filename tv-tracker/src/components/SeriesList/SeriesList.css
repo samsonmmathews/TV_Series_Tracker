@@ -1,9 +1,17 @@
 .series-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
     padding: 0 8px;
+    /* gap: 12px; */
+}
+
+.series-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .sort-btn {
