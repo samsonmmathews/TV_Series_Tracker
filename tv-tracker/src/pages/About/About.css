@@ -1,0 +1,60 @@
+.about-container {
+    padding: 48px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-hero {
+    text-align: center;
+    background: var(--prussian-blue);
+    padding: 60px 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    color: var(--sandstorm);
+    margin-bottom: 48px;
+}
+
+.about-hero h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.about-hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0.9;
+    padding: 10px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.about-card {
+    background: var(--maastricht-blue);
+    padding: 28px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: var(--sandstorm);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45), 0 0 20px rgba(239, 129, 14, 0.25);
+}
+
+.about-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    font-size: 1em;
+    opacity: 0.85;
+    line-height: 1.5;
+}
