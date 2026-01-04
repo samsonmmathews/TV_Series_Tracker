@@ -13,7 +13,7 @@ export default function SeriesList() {
 
         async function fetchSeries() {
             try {
-                const response = await axios.get("http://localhost:8888/admin/series/api/allSeries");
+                const response = await axios.get("https://tv-series-tracker.onrender.com/admin/series/api/allSeries");
                 setSeries(response.data);
             } catch (err) {
                 console.error("Error fetching series:", err);
@@ -43,7 +43,7 @@ export default function SeriesList() {
     const handleUpdate = async (seriesID, updatedFields) => {
         try {
             await axios.post(
-                "http://localhost:8888/admin/series/api/updateSeries",
+                "https://tv-series-tracker.onrender.com/admin/series/api/updateSeries",
                 {
                     seriesID,
                     watched_episodes: updatedFields.watched_episodes,
@@ -63,7 +63,7 @@ export default function SeriesList() {
 
     const handleDelete = async (seriesID) => {
         try {
-            await axios.post("http://localhost:8888/admin/series/api/deleteSeries", {
+            await axios.post("https://tv-series-tracker.onrender.com/admin/series/api/deleteSeries", {
                 seriesID
             });
 

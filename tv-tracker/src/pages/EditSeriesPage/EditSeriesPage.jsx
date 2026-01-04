@@ -18,7 +18,7 @@ export default function EditSeriesPage() {
   useEffect(() => {
     const fetchSeries = async () => {
       try {
-        const response = await axios.get("http://localhost:8888/admin/series/api/allSeries");
+        const response = await axios.get("https://tv-series-tracker.onrender.com/admin/series/api/allSeries");
         const series = response.data.find(s => s._id === seriesID);
         if (!series) {
           alert("Series not found");
@@ -45,7 +45,7 @@ export default function EditSeriesPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8888/admin/series/api/updateSeries", {
+      await axios.post("https://tv-series-tracker.onrender.com/admin/series/api/updateSeries", {
         seriesID,
         watched_episodes: form.watched_episodes || 0,
         next_episode_rating: form.next_episode_rating || 0,

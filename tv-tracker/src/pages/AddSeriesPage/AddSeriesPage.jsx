@@ -21,7 +21,7 @@ export default function AddSeriesPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8888/admin/series/api/addSeries", form);
+            await axios.post("https://tv-series-tracker.onrender.com/admin/series/api/addSeries", form);
             navigate("/series");
         } catch (err) {
             console.error("Failed to add series:", err);

@@ -10,7 +10,7 @@ export default function CompaniesList() {
 
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get("http://localhost:8888/admin/companies/api/allCompanies");
+                const response = await axios.get("https://tv-series-tracker.onrender.com/admin/companies/api/allCompanies");
                 setCompanies(response.data);
             } catch (err) {
                 console.error("Error fetching companies:", err);
